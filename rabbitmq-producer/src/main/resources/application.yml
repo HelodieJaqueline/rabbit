@@ -1,0 +1,33 @@
+server:
+  servlet:
+    context-path: /rabbit-producer
+  port: 8080
+spring:
+  # mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/producer?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: ysten123
+    druid:
+      initial-size: 5
+      max-active: 200
+      min-idle: 20
+      max-wait: 30000
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      validation-query: select 1
+      time-between-eviction-runs-millis: 60000
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+  # rabbitmq
+  rabbitmq:
+    addresses: 192.168.50.226:5672
+    username: admin
+    password: 123456
+    virtual-host: /user
+    user:
+      user-topic-exchange: USER_TOPIC_EXCHANGE
+      user-queue: USER_QUEUE
