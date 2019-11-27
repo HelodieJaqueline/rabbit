@@ -1,6 +1,5 @@
 package com.zhangrui.rabbit.consumer.config;
 
-import lombok.Data;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -22,7 +21,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(prefix = "spring.rabbitmq.user")
-@Data
 public class RabbitConfig {
 
     private String userTopicExchange;
@@ -31,12 +29,12 @@ public class RabbitConfig {
 
     @Bean("userQueue")
     public Queue getFirstQueue(){
-        return new Queue(userQueue);
+        return new Queue("USER_QUEUE");
     }
 
     @Bean("userTopicExchange")
     public TopicExchange getTopicExchange(){
-        return new TopicExchange(userTopicExchange);
+        return new TopicExchange("USER_TOPIC_EXCHANGE");
     }
 
     @Bean

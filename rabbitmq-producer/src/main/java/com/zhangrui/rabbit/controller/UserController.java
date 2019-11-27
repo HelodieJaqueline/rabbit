@@ -1,7 +1,7 @@
-package com.zhangrui.rabbit.producer.controller;
+package com.zhangrui.rabbit.controller;
 
-import com.zhangrui.rabbit.producer.domain.User;
-import com.zhangrui.rabbit.producer.service.IUserService;
+import com.zhangrui.rabbit.domain.User;
+import com.zhangrui.rabbit.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

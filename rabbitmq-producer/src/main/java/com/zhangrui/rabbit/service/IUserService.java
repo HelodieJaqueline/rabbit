@@ -1,6 +1,7 @@
-package com.zhangrui.rabbit.producer.service;
+package com.zhangrui.rabbit.service;
 
-import com.zhangrui.rabbit.producer.domain.User;
+
+import com.zhangrui.rabbit.domain.User;
 
 /**
  * @Author: ZhangRui

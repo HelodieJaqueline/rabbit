@@ -1,9 +1,10 @@
 package com.zhangrui.rabbit.consumer.listener;
 
-import com.zhangrui.rabbit.consumer.domain.User;
+import com.zhangrui.rabbit.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +14,17 @@ import org.springframework.stereotype.Component;
  * @Description:
  * @Modified: By
  */
+//@Component
+//@PropertySource("classpath:rabbit.properties")
+//@RabbitListener(queues = "${user.user-queue}", containerFactory="rabbitListenerContainerFactory")
 @Component
-@RabbitListener(queues = "USER_QUEUE", containerFactory="rabbitListenerContainerFactory")
+@PropertySource("classpath:application.yml")
+@RabbitListener(queues = "${spring.rabbitmq.user.user-queue}", containerFactory="rabbitListenerContainerFactory")
 @Slf4j
 public class UserRegisterListener {
 
-
     @RabbitHandler
-    public void process(@Payload User user) {
-        log.info("consumer register User message:{}", user);
+    public void process(@Payload User msg) {
+        log.info("consumer register User message:{}", msg);
     }
 }

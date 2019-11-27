@@ -1,4 +1,4 @@
-package com.zhangrui.rabbit.consumer.domain;
+package com.zhangrui.rabbit.domain;
 
 import com.alibaba.fastjson.JSON;
 import java.io.Serializable;

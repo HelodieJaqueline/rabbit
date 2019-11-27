@@ -8,8 +8,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://127.0.0.1:3306/producer?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
-    username: root
-    password: ysten123
+    username: xxx
+    password: xxx
     druid:
       initial-size: 5
       max-active: 200
@@ -25,9 +25,10 @@ spring:
   # rabbitmq
   rabbitmq:
     addresses: 192.168.50.226:5672
-    username: admin
-    password: 123456
-    virtual-host: /user
+    username: xxx
+    password: xxx
+    virtual-host: /
     user:
       user-topic-exchange: USER_TOPIC_EXCHANGE
       user-queue: USER_QUEUE
+      routing-key1 : new.user.register
